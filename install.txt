@@ -1,0 +1,46 @@
+Uso local
+
+Categorias
+http://localhost/wordpress/category/funcionarios/?json=1
+
+
+
+// -----------------------------------------------------------------------------
+
+URL Descarga
+https://wordpress.org/plugins/json-api/
+
+Instalaci�n
+
+    Upload the json-api folder to the /wp-content/plugins/ directory or install directly through the plugin installer.
+    Activate the plugin through the 'Plugins' menu in WordPress or by using the link provided by the plugin installer.
+
+Uso
+	https://wordpress.org/plugins/json-api/other_notes/#1.-General-Concepts
+	
+	1.1. Requests
+
+Requests use a simple REST-style HTTP GET or POST. To invoke the API, include a non-empty query value for json in the URL.
+
+JSON API operates in two modes:
+
+    Implicit mode is triggered by setting the json query var to a non-empty value on any WordPress page. The content that would normally appear on that page is returned in JSON format.
+    Explicit mode is triggered by setting json to a known method string. See Section 2: Request methods for a complete method listing.
+
+Implicit mode examples:
+
+    http://www.example.org/?json=1
+    http://www.example.org/?p=47&json=1
+    http://www.example.org/tag/banana/?json=1
+
+Explicit mode examples:
+
+    http://www.example.org/?json=get_recent_posts
+    http://www.example.org/?json=get_post&post_id=47
+    http://www.example.org/?json=get_tag_posts&tag_slug=banana
+
+With user-friendly permalinks configured:
+
+    http://www.example.org/api/get_recent_posts/
+    http://www.example.org/api/get_post/?post_id=47
+    http://www.example.org/api/get_tag_posts/?tag_slug=banana
